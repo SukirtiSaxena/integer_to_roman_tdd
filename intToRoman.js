@@ -1,6 +1,9 @@
 
 const roman = num => {
-    return ('I');
+    if (num === 1)
+        return 'I';
+    if (num === 2)
+        return 'II';
 };
 
 module.exports = { roman };
