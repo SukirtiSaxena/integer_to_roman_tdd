@@ -7,5 +7,8 @@ describe("Number to Roman Numeral",() => {
     test("Number 2 is equivalent to --> II ", () => {
         expect(roman(2)).toBe('II');
     });
+    test("Number 3 is equivalent to --> III ", () => {
+        expect(roman(3)).toBe('III');
+    });
 
 });
