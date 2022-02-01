@@ -7,6 +7,11 @@ const roman = num => {
 
     let result = '';
     let remaining = num;
+    if (num === undefined) return "Number is required";
+    if (num >= 5000) return "Romans did not require to calculate such larger numbers!!";
+    if (num < 0) return "Romans did not require to calculate negative numbers!!";
+    if (num === 0) return "nulla";
+    if (!Number.isInteger(num)) return "Not a number";
 
     for (let i of Object.keys(romanKey)) {
         while (remaining >= romanKey[i]) {
