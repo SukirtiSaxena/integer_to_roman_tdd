@@ -1,50 +1,43 @@
-const {roman} = require('./intToRoman');
+const { roman } = require('./intToRoman');
+const each = require('jest-each').default;
 
-describe("Number to Roman Numeral",() => {
-    test("Number 1 is equivalent to --> I ", () => {
-        expect(roman(1)).toBe('I');
-    });
-    test("Number 2 is equivalent to --> II ", () => {
-        expect(roman(2)).toBe('II');
-    });
-    test("Number 3 is equivalent to --> III ", () => {
-        expect(roman(3)).toBe('III');
-    });
-    test("Number 4 is equivalent to --> IV ", () => {
-        expect(roman(4)).toBe('IV');
-    });
-    test("Number 5 is equivalent to --> V ", () => {
-        expect(roman(5)).toBe('V');
-    });
-    test("Number 6 is equivalent to --> VI ", () => {
-        expect(roman(6)).toBe('VI');
-    });
-    test("Number 7 is equivalent to --> VII ", () => {
-        expect(roman(7)).toBe('VII');
-    });
-    test("Number 8 is equivalent to --> VIII ", () => {
-        expect(roman(8)).toBe('VIII');
-    });
-    test("Number 9 is equivalent to --> IX ", () => {
-        expect(roman(9)).toBe('IX');
-    });
-    test("Number 10 is equivalent to --> X ", () => {
-        expect(roman(10)).toBe('X');
-    });
-    test("Number 11 is equivalent to --> XI ", () => {
-        expect(roman(11)).toBe('XI');
-    });
-    test("Number 15 is equivalent to --> XV ", () => {
-        expect(roman(15)).toBe('XV');
-    });
-    test("Number 20 is equivalent to --> XX ", () => {
-        expect(roman(20)).toBe('XX');
-    });
-    test("Number 30 is equivalent to --> XXX ", () => {
-        expect(roman(30)).toBe('XXX');
-    });
-    test("Number 40 is equivalent to --> XL ", () => {
-        expect(roman(40)).toBe('XL');
+describe("Number to Roman Numeral ", () => {
+
+    each([
+        [1, 'I'],
+        [2, 'II'],
+        [3, 'III'],
+        [4, 'IV'],
+        [5, 'V'],
+        [6, 'VI'],
+        [7, 'VII'],
+        [8, 'VIII'],
+        [9, 'IX'],
+        [10, 'X'],
+        [11, 'XI'],
+        [12, 'XII'],
+        [13, 'XIII'],
+        [14, 'XIV'],
+        [15, 'XV'],
+        [16, 'XVI'],
+        [17, 'XVII'],
+        [18, 'XVIII'],
+        [19, 'XIX'],
+        [20, 'XX'],
+        [40, 'XL'],
+        [45, 'XLV'],
+        [50, 'L'],
+        [90, 'XC'],
+        [100, 'C'],
+        [400, 'CD'],
+        [700, 'DCC'],
+        [900, 'CM'],
+        [1000, 'M'],
+        [2475, 'MMCDLXXV'],
+        [2550, 'MMDL'],
+        [3724, 'MMMDCCXXIV']
+    ]).test("Number %i is equivalenat to --> %s", (number, expected) => {
+        expect(roman(number)).toBe(expected);
     });
 
 });
