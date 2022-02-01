@@ -43,5 +43,8 @@ describe("Number to Roman Numeral",() => {
     test("Number 30 is equivalent to --> XXX ", () => {
         expect(roman(30)).toBe('XXX');
     });
+    test("Number 40 is equivalent to --> XL ", () => {
+        expect(roman(40)).toBe('XL');
+    });
 
 });
