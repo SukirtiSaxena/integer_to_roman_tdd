@@ -1,27 +1,20 @@
 
 const roman = num => {
+
+    const romanKey = {
+        X: 10, IX: 9, V: 5, IV: 4, I: 1
+    }
+
     let result = '';
     let remaining = num;
 
-    if (num >= 9) {
-        result += 'IX';
-        remaining -= 9;
+    for (let i of Object.keys(romanKey)) {
+        while (remaining >= romanKey[i]) {
+            result += i;
+            remaining -= romanKey[i];
+        }
     }
-    else
-    if (num >= 5) {
-        result += 'V'
-        remaining -= 5;
-    }
-    else
-    if (num === 4) {
-        result += 'IV';
-        remaining -= 4;
-    }
-   
-    while (remaining > 0) {
-        result += 'I';
-        remaining--;
-    };
+
     return result;
 };
 
