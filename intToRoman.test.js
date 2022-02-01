@@ -31,5 +31,17 @@ describe("Number to Roman Numeral",() => {
     test("Number 10 is equivalent to --> X ", () => {
         expect(roman(10)).toBe('X');
     });
+    test("Number 11 is equivalent to --> XI ", () => {
+        expect(roman(11)).toBe('XI');
+    });
+    test("Number 15 is equivalent to --> XV ", () => {
+        expect(roman(15)).toBe('XV');
+    });
+    test("Number 20 is equivalent to --> XX ", () => {
+        expect(roman(20)).toBe('XX');
+    });
+    test("Number 30 is equivalent to --> XXX ", () => {
+        expect(roman(30)).toBe('XXX');
+    });
 
 });
