@@ -1,15 +1,19 @@
 
 const roman = num => {
     let result = '';
+    let remaining = num;
+
+    if (num >= 5) {
+        result += 'V'
+        remaining -= 5;
+    }
 
     if (num === 4) 
         return 'IV';
-    if (num === 5)
-        return 'V';
-        
-    while (num > 0) {
+   
+    while (remaining > 0) {
         result += 'I';
-        num--;
+        remaining--;
     };
     return result;
 };
