@@ -25,5 +25,11 @@ describe("Number to Roman Numeral",() => {
     test("Number 8 is equivalent to --> VIII ", () => {
         expect(roman(8)).toBe('VIII');
     });
+    test("Number 9 is equivalent to --> IX ", () => {
+        expect(roman(9)).toBe('IX');
+    });
+    test("Number 10 is equivalent to --> X ", () => {
+        expect(roman(10)).toBe('X');
+    });
 
 });
